@@ -1,0 +1,1733 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ateliê Resina Color Art | Peças Artesanais em Resina Epóxi</title>
+    <meta name="description" content="Peças únicas e personalizadas em resina epóxi. Chaveiros, letras decorativas, porta-copos e muito mais. Encomende pelo WhatsApp!">
+    <meta name="keywords" content="resina epóxi, artesanal, personalizado, chaveiros, letras decorativas">
+    <meta property="og:title" content="Ateliê Resina Color Art | Peças Artesanais em Resina Epóxi">
+    <meta property="og:description" content="Transformamos resina em peças únicas e personalizadas">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#E8728A">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Jost:wght@300;400;500;600&family=Dancing+Script:wght@500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --rose: #E8728A;
+            --rose-light: #F5A8B8;
+            --rose-deep: #C94F6A;
+            --rose-blush: #FDE8ED;
+            --orange: #E8874A;
+            --orange-light: #F5B08A;
+            --orange-deep: #C96030;
+            --orange-peach: #FDF0E8;
+            --white: #FFFFFF;
+            --cream: #FDF8F5;
+            --warm-gray: #8C7B75;
+            --dark: #2C1810;
+            --text: #3D2B24;
+            --text-light: #7A5C54;
+            --gold: #C9A96E;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Jost', sans-serif;
+            color: var(--text);
+            background: var(--cream);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--dark);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ─── HEADER ─── */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1.25rem 0;
+            transition: all 0.4s ease;
+            background: transparent;
+        }
+
+        header.scrolled {
+            background: rgba(253, 248, 245, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 0.875rem 0;
+            box-shadow: 0 4px 30px rgba(232, 114, 138, 0.1);
+            border-bottom: 1px solid rgba(232, 114, 138, 0.12);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo-script {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.1rem;
+            color: var(--rose);
+            font-weight: 600;
+        }
+
+        .logo-main {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--dark);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text);
+            text-decoration: none;
+            letter-spacing: 0.03em;
+            transition: color 0.25s ease;
+            position: relative;
+            padding-bottom: 4px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1.5px;
+            background: linear-gradient(135deg, var(--rose), var(--orange));
+            border-radius: 2px;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: left;
+        }
+
+        nav a:hover {
+            color: var(--rose);
+        }
+
+        nav a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: linear-gradient(135deg, var(--rose), var(--orange));
+            color: white;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 1rem 2rem;
+            border-radius: 100px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 30px rgba(232, 114, 138, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(232, 114, 138, 0.5);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: transparent;
+            color: var(--rose);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            padding: 0.8rem 1.6rem;
+            border-radius: 100px;
+            border: 1.5px solid var(--rose);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.4s ease;
+        }
+
+        .btn-outline:hover {
+            background: var(--rose);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        /* ─── HERO SECTION ─── */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #FDE8ED 0%, #FDF0E8 50%, #FDF8F5 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 7rem 0 4rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -10%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            background: radial-gradient(ellipse, rgba(232,114,138,0.15) 0%, transparent 70%);
+            animation: float 8s ease-in-out infinite;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0%;
+            left: -5%;
+            width: 400px;
+            height: 400px;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            background: radial-gradient(ellipse, rgba(232,135,74,0.12) 0%, transparent 70%);
+            animation: float 10s ease-in-out infinite reverse;
+            z-index: 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.8rem, 5vw, 5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            color: var(--dark);
+            margin: 0.5rem 0 1.5rem;
+        }
+
+        .hero-text h1 .script {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.4rem, 4.5vw, 4.5rem);
+            color: var(--rose);
+            display: block;
+            margin-bottom: 0.15em;
+            font-weight: 700;
+        }
+
+        .hero-text h1 .gradient {
+            background: linear-gradient(135deg, var(--rose), var(--orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-label {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--rose);
+            display: block;
+            margin-bottom: 0.75rem;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            font-weight: 300;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+            max-width: 560px;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            animation: fadeInUp 0.8s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-light);
+            letter-spacing: 0.03em;
+        }
+
+        .badge-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--rose), var(--orange));
+            flex-shrink: 0;
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-image-frame {
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 4/5;
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(232, 114, 138, 0.25);
+        }
+
+        .img-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--rose-blush) 0%, var(--orange-peach) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            color: var(--rose);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            border: 2px dashed rgba(232, 114, 138, 0.3);
+        }
+
+        .float-card {
+            position: absolute;
+            background: white;
+            border-radius: 16px;
+            padding: 0.875rem 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            box-shadow: 0 10px 40px rgba(44, 24, 16, 0.12);
+            z-index: 2;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .float-card.card1 {
+            top: 10%;
+            left: -8%;
+        }
+
+        .float-card.card2 {
+            bottom: 12%;
+            right: -8%;
+            animation: float 7s ease-in-out infinite reverse;
+        }
+
+        .float-emoji {
+            font-size: 1.4rem;
+        }
+
+        .float-card strong {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--dark);
+            line-height: 1;
+        }
+
+        .float-card p {
+            font-size: 0.72rem;
+            color: var(--text-light);
+            font-weight: 400;
+            margin-top: 0.15rem;
+        }
+
+        .ring {
+            position: absolute;
+            inset: -20px;
+            border-radius: 40px;
+            border: 1.5px solid rgba(232,114,138,0.2);
+            pointer-events: none;
+        }
+
+        .ring2 {
+            position: absolute;
+            inset: -40px;
+            border-radius: 50px;
+            border: 1px dashed rgba(232,135,74,0.15);
+            pointer-events: none;
+            animation: spin-slow 30s linear infinite;
+        }
+
+        /* ─── SEÇÃO PRODUTOS ─── */
+        .products-section {
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .products-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(ellipse 60% 40% at 100% 0%, rgba(232,114,138,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 0% 100%, rgba(232,135,74,0.05) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .products-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin: 0.5rem 0 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-light);
+            font-weight: 300;
+            max-width: 560px;
+            line-height: 1.8;
+            margin: 0 auto;
+        }
+
+        .deco-line {
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(135deg, var(--rose), var(--orange));
+            border-radius: 2px;
+            margin: 1.5rem auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.75rem;
+            margin-bottom: 3.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 40px rgba(44, 24, 16, 0.08);
+            transition: all 0.4s ease;
+            border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(232, 114, 138, 0.25);
+            border-color: rgba(232,114,138,0.2);
+        }
+
+        .product-image {
+            position: relative;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .product-image .img-placeholder {
+            height: 100%;
+            min-height: unset;
+            border-radius: 0;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: linear-gradient(135deg, var(--rose), var(--orange));
+            color: white;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.7rem;
+            border-radius: 100px;
+            z-index: 1;
+        }
+
+        .product-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .product-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.2;
+        }
+
+        .product-desc {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            font-weight: 300;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(232,114,138,0.12);
+        }
+
+        .product-price {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--rose-deep);
+        }
+
+        .buy-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: linear-gradient(135deg, var(--rose), var(--orange));
+            color: white;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            padding: 0.6rem 1.1rem;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(232,114,138,0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .buy-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(232,114,138,0.45);
+        }
+
+        .products-cta {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .products-cta p {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        .products-cta strong {
+            color: var(--rose-deep);
+            font-weight: 600;
+        }
+
+        /* ─── SEÇÃO GALERIA ─── */
+        .gallery-section {
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 1/1;
+        }
+
+        .gallery-item.large {
+            grid-column: span 2;
+            grid-row: span 2;
+            aspect-ratio: auto;
+        }
+
+        .gallery-item.small {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .gallery-item.medium {
+            grid-column: span 2;
+            aspect-ratio: auto;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+        }
+
+        .gallery-image .img-placeholder {
+            height: 100%;
+            min-height: unset;
+            border-radius: 16px;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(232, 114, 138, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            border-radius: 16px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-text {
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        /* ─── SEÇÃO SOBRE ─── */
+        .about-section {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, rgba(253,232,237,0.4) 0%, rgba(253,240,232,0.4) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            max-width: 480px;
+        }
+
+        .about-image-frame {
+            width: 100%;
+            aspect-ratio: 3/4;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(232, 114, 138, 0.25);
+        }
+
+        .about-image .img-placeholder {
+            height: 100%;
+            min-height: unset;
+            border-radius: 24px;
+        }
+
+        .about-text h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin: 0.5rem 0 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 300;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 16px;
+            border-left: 3px solid var(--rose);
+        }
+
+        .highlight h3 {
+            font-size: 1rem;
+            color: var(--rose-deep);
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin: 0;
+        }
+
+        /* ─── SEÇÃO DEPOIMENTOS ─── */
+        .testimonials-section {
+            padding: 6rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 40px rgba(44, 24, 16, 0.08);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(232, 114, 138, 0.25);
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 1.2rem;
+            letter-spacing: 0.25em;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: var(--text);
+            font-weight: 300;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--rose-deep);
+            font-size: 0.95rem;
+        }
+
+        /* ─── SEÇÃO CTA FINAL ─── */
+        .final-cta {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--rose-blush) 0%, var(--orange-peach) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 30% 100%, rgba(232,114,138,0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 0%, rgba(232,135,74,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            margin-bottom: 2rem;
+        }
+
+        .final-cta .btn-primary {
+            font-size: 1rem;
+            padding: 1.2rem 2.5rem;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-col h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--rose-light);
+        }
+
+        .footer-col p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.8;
+        }
+
+        .footer-col a {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            margin-bottom: 0.75rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-col a:hover {
+            color: var(--rose-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .footer-bottom p {
+            margin: 0;
+        }
+
+        /* ─── WHATSAPP FLUTUANTE ─── */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 999;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.4);
+            transition: all 0.4s ease;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-3px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        /* ─── ANIMAÇÕES ─── */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-12px); }
+        }
+
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* ─── RESPONSIVO ─── */
+        @media (max-width: 1024px) {
+            nav { display: none; }
+            .header-btn { display: none !important; }
+            .menu-toggle { display: flex; }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text {
+                text-align: center;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .gallery-item.large {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .gallery-item.medium {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 1rem 0; }
+            
+            .hero {
+                padding: 6rem 0 3rem;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 br {
+                display: none;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .hero-badges {
+                justify-content: center;
+            }
+
+            .float-card {
+                display: none;
+            }
+
+            .ring, .ring2 {
+                display: none;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 1rem; }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .btn-primary, .btn-outline {
+                width: 100%;
+                justify-content: center;
+                font-size: 0.85rem;
+                padding: 0.8rem 1.2rem;
+            }
+
+            .final-cta .btn-primary {
+                width: 100%;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 1.5rem;
+                right: 1.5rem;
+            }
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--rose), var(--orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="#hero" class="logo">
+                    <span class="logo-script">Ateliê Resina</span>
+                    <span class="logo-main">Color Art</span>
+                </a>
+
+                <nav>
+                    <a href="#hero">Início</a>
+                    <a href="#produtos">Produtos</a>
+                    <a href="#galeria">Galeria</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#depoimentos">Depoimentos</a>
+                </nav>
+
+                <a href="https://wa.me/557199246926" target="_blank" class="btn-primary header-btn">
+                    <span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Pedir
+                    </span>
+                </a>
+
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="hero-label">✦ Artesanato Premium em Resina</span>
+                <h1>
+                    <span class="script">Transformamos</span>
+                    resina em peças <span class="gradient">únicas</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Cada peça é criada com amor, técnica e dedicação. Personalizadas para tornar seu momento ainda mais especial.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="https://wa.me/557199246926" target="_blank" class="btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Fazer Pedido no WhatsApp
+                    </a>
+                    <a href="#produtos" class="btn-outline">
+                        Ver Produtos
+                    </a>
+                </div>
+
+                <div class="hero-badges">
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        100% Artesanal
+                    </div>
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        Personalizado
+                    </div>
+                    <div class="badge">
+                        <span class="badge-dot"></span>
+                        Entrega Rápida
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="hero-image-frame">
+                    <div class="img-placeholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5"/>
+                            <polyline points="21 15 16 10 5 21"/>
+                        </svg>
+                        <span>Foto Principal</span>
+                        <span style="font-size: 0.7rem; opacity: 0.6;">Substitua por sua melhor foto</span>
+                    </div>
+                </div>
+                
+                <div class="float-card card1">
+                    <span class="float-emoji">⭐</span>
+                    <div>
+                        <strong>4.9/5</strong>
+                        <p>Avaliação</p>
+                    </div>
+                </div>
+
+                <div class="float-card card2">
+                    <span class="float-emoji">✨</span>
+                    <div>
+                        <strong>+500</strong>
+                        <p>Peças feitas</p>
+                    </div>
+                </div>
+
+                <div class="ring"></div>
+                <div class="ring2"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO PRODUTOS -->
+    <section id="produtos" class="products-section">
+        <div class="container">
+            <div class="products-header">
+                <span class="hero-label">✦ Nossa Coleção</span>
+                <h2 class="section-title">Nossos <span class="text-gradient">Produtos</span></h2>
+                <div class="deco-line"></div>
+                <p class="section-subtitle">Peças únicas criadas com resina epóxi de alta qualidade, cada uma com seu próprio charme e personalidade.</p>
+            </div>
+
+            <div class="products-grid">
+                <!-- Chaveiros -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="img-placeholder" style="min-height: 220px;">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                            <span>Foto dos Chaveiros</span>
+                        </div>
+                        <span class="product-badge">Mais Pedido</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Chaveiros Personalizados</h3>
+                        <p class="product-desc">Chaveiros únicos em resina epóxi com inclusões personalizadas. Perfeitos para presentear ou usar no dia a dia.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 35,00</span>
+                            <a href="https://wa.me/557199246926?text=Olá! Tenho interesse em Chaveiros Personalizados" target="_blank" class="buy-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Letras Decorativas -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="img-placeholder" style="min-height: 220px;">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                            <span>Foto das Letras</span>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Letras Decorativas</h3>
+                        <p class="product-desc">Letras em resina para decorar ambientes com elegância. Personalize com cores e inclusões especiais.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 89,00</span>
+                            <a href="https://wa.me/557199246926?text=Olá! Tenho interesse em Letras Decorativas" target="_blank" class="buy-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Porta-copos -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="img-placeholder" style="min-height: 220px;">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                            <span>Foto dos Porta-copos</span>
+                        </div>
+                        <span class="product-badge">Novo</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Porta-copos em Resina</h3>
+                        <p class="product-desc">Porta-copos artesanais que transformam qualquer mesa em um ambiente sofisticado e especial.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 65,00</span>
+                            <a href="https://wa.me/557199246926?text=Olá! Tenho interesse em Porta-copos em Resina" target="_blank" class="buy-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lembranças Personalizadas -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="img-placeholder" style="min-height: 220px;">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                            <span>Foto das Lembranças</span>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Lembranças Personalizadas</h3>
+                        <p class="product-desc">Lembranças em resina para casamentos, aniversários e datas especiais. Inesquecíveis e únicas.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 12,00</span>
+                            <a href="https://wa.me/557199246926?text=Olá! Tenho interesse em Lembranças Personalizadas" target="_blank" class="buy-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bandejas Artesanais -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="img-placeholder" style="min-height: 220px;">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                            <span>Foto das Bandejas</span>
+                        </div>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Bandejas Artesanais</h3>
+                        <p class="product-desc">Bandejas elegantes em resina epóxi para organização e decoração. Cada peça é uma obra de arte.</p>
+                        <div class="product-footer">
+                            <span class="product-price">R$ 149,00</span>
+                            <a href="https://wa.me/557199246926?text=Olá! Tenho interesse em Bandejas Artesanais" target="_blank" class="buy-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kits Personalizados -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <div class="img-placeholder" style="min-height: 220px;">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                            <span>Foto dos Kits</span>
+                        </div>
+                        <span class="product-badge">Exclusivo</span>
+                    </div>
+                    <div class="product-body">
+                        <h3 class="product-name">Kits Personalizados</h3>
+                        <p class="product-desc">Kits completos em resina epóxi para presentear com estilo. Monte o kit dos seus sonhos conosco.</p>
+                        <div class="product-footer">
+                            <span class="product-price">A partir de R$ 120,00</span>
+                            <a href="https://wa.me/557199246926?text=Olá! Tenho interesse em Kits Personalizados" target="_blank" class="buy-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products-cta">
+                <p>Não encontrou o que procura? <strong>Fazemos sob encomenda!</strong></p>
+                <a href="https://wa.me/557199246926?text=Olá! Gostaria de fazer um pedido personalizado." target="_blank" class="btn-primary">
+                    Solicitar Pedido Personalizado
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO GALERIA -->
+    <section id="galeria" class="gallery-section">
+        <div class="container">
+            <div class="gallery-header">
+                <span class="hero-label">✦ Nosso Trabalho</span>
+                <h2 class="section-title">Galeria de <span class="text-gradient">Criações</span></h2>
+                <div class="deco-line"></div>
+                <p class="section-subtitle">Cada peça conta uma história. Conheça alguns dos nossos trabalhos e apaixone-se.</p>
+            </div>
+
+            <div class="gallery-grid">
+                <div class="gallery-item large">
+                    <div class="gallery-image">
+                        <div class="img-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                            <span>Foto 1</span>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-text">Ver mais ↗</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item small">
+                    <div class="gallery-image">
+                        <div class="img-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                            <span>Foto 2</span>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-text">Ver mais ↗</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item small">
+                    <div class="gallery-image">
+                        <div class="img-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                            <span>Foto 3</span>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-text">Ver mais ↗</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item medium">
+                    <div class="gallery-image">
+                        <div class="img-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                            <span>Foto 4</span>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-text">Ver mais ↗</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item medium">
+                    <div class="gallery-image">
+                        <div class="img-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                            <span>Foto 5</span>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-text">Ver mais ↗</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item small">
+                    <div class="gallery-image">
+                        <div class="img-placeholder">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                            <span>Foto 6</span>
+                        </div>
+                    </div>
+                    <div class="gallery-overlay">
+                        <span class="gallery-text">Ver mais ↗</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="https://www.instagram.com/ateliercolorart" target="_blank" class="btn-outline">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                    </svg>
+                    Ver mais no Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO SOBRE -->
+    <section id="sobre" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="about-image-frame">
+                        <div class="img-placeholder">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="12" cy="8" r="4"/>
+                                <path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/>
+                            </svg>
+                            <span>Foto da Artesã</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-text">
+                    <span class="hero-label">✦ Nossa História</span>
+                    <h2>Sobre o Atelier Resina 01</h2>
+                    <p>
+                        Bem-vinda ao Atelier Resina 01, onde a criatividade e a dedicação se transformam em peças únicas e extraordinárias. Cada criação nossa é resultado de horas de trabalho minucioso, pesquisa de técnicas inovadoras e, acima de tudo, paixão genuína pelo artesanato.
+                    </p>
+                    <p>
+                        Acreditamos que beleza e funcionalidade podem caminhar juntas. Nossa missão é transformar resina em objetos que não apenas decoram, mas que contam histórias e marcam momentos especiais na vida de quem as recebe.
+                    </p>
+
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <h3>Artesanato Premium</h3>
+                            <p>Cada peça é criada com resina epóxi de alta qualidade e técnica apurada</p>
+                        </div>
+                        <div class="highlight">
+                            <h3>100% Personalizado</h3>
+                            <p>Suas ideias ganham vida exatamente do jeito que você imagina</p>
+                        </div>
+                        <div class="highlight">
+                            <h3>Atenção aos Detalhes</h3>
+                            <p>Cada aspecto é pensado para proporcionar a melhor experiência</p>
+                        </div>
+                        <div class="highlight">
+                            <h3>Qualidade Garantida</h3>
+                            <p>Utilizamos apenas materiais premium com durabilidade comprovada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DEPOIMENTOS -->
+    <section id="depoimentos" class="testimonials-section">
+        <div class="container">
+            <div class="testimonials-header">
+                <span class="hero-label">✦ Satisfação de Clientes</span>
+                <h2 class="section-title">Depoimentos <span class="text-gradient">Reais</span></h2>
+                <div class="deco-line"></div>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                    <p class="testimonial-text">"Produto perfeito e acabamento impecável! Superou minhas expectativas. Recomendo para todos!"</p>
+                    <p class="testimonial-author">— Sarah Oliveira</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                    <p class="testimonial-text">"Presentes para o casamento dos meus sonhos. A menina é uma artista! Muito obrigada!"</p>
+                    <p class="testimonial-author">— Maria & João</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                    <p class="testimonial-text">"Entrega rápida e qualidade excepcional. Já é minha segunda encomenda! Muito top!"</p>
+                    <p class="testimonial-author">— Lucas Silva</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                    <p class="testimonial-text">"As letras decorativas ficaram lindíssimas no quarto. Muito delicado e elegante!"</p>
+                    <p class="testimonial-author">— Carolina Lima</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                    <p class="testimonial-text">"Comprei como lembrança de formatura. Virou reliquia! Qualidade incomparável."</p>
+                    <p class="testimonial-author">— Ana Beatriz</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">★ ★ ★ ★ ★</div>
+                    <p class="testimonial-text">"Personalizou exatamente do jeito que pedi. Atendimento impecável do início ao fim!"</p>
+                    <p class="testimonial-author">— Pedro Costa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO CTA FINAL -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>Peça agora sua arte <br> personalizada em resina</h2>
+                <a href="https://wa.me/557199246926" target="_blank" class="btn-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Conversar no WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>Ateliê Resina Color Art</h3>
+                    <p>Transformando resina em peças únicas e personalizadas. Cada criação é uma obra de arte.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Links Úteis</h3>
+                    <a href="#hero">Início</a>
+                    <a href="#produtos">Produtos</a>
+                    <a href="#galeria">Galeria</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#depoimentos">Depoimentos</a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <a href="https://wa.me/557199246926" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        (71) 99246-926
+                    </a>
+                    <a href="https://www.instagram.com/ateliercolorart" target="_blank">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                        @ateliercolorart
+                    </a>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Horário</h3>
+                    <p>Segunda a Sexta<br>9h às 18h</p>
+                    <p>Sábado<br>9h às 14h</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 Ateliê Resina Color Art. Todos os direitos reservados. | Feito com ❤️ para você</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/557199246926" target="_blank" class="whatsapp-float" title="Fale conosco no WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const nav = document.querySelector('nav');
+        
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Close menu when link is clicked
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
