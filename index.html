@@ -376,24 +376,6 @@
             box-shadow: 0 20px 60px rgba(232, 114, 138, 0.25);
         }
 
-        .img-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--rose-blush) 0%, var(--orange-peach) 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            color: var(--rose);
-            font-family: 'Jost', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            border: 2px dashed rgba(232, 114, 138, 0.3);
-        }
-
         .float-card {
             position: absolute;
             background: white;
@@ -536,10 +518,15 @@
             overflow: hidden;
         }
 
-        .product-image .img-placeholder {
+        .product-image img {
+            width: 100%;
             height: 100%;
-            min-height: unset;
-            border-radius: 0;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
         }
 
         .product-badge {
@@ -654,10 +641,41 @@
             margin-bottom: 4rem;
         }
 
+        /* Filter buttons */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 3rem;
+        }
+
+        .filter-btn {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            padding: 0.5rem 1.25rem;
+            border-radius: 100px;
+            border: 1.5px solid rgba(232,114,138,0.3);
+            background: transparent;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: linear-gradient(135deg, var(--rose), var(--orange));
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(232,114,138,0.3);
+        }
+
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
             margin-bottom: 3rem;
         }
 
@@ -667,39 +685,29 @@
             overflow: hidden;
             cursor: pointer;
             aspect-ratio: 1/1;
+            transition: all 0.4s ease;
         }
 
-        .gallery-item.large {
-            grid-column: span 2;
-            grid-row: span 2;
-            aspect-ratio: auto;
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(232, 114, 138, 0.3);
         }
 
-        .gallery-item.small {
-            grid-column: span 1;
-            grid-row: span 1;
-        }
-
-        .gallery-item.medium {
-            grid-column: span 2;
-            aspect-ratio: auto;
-        }
-
-        .gallery-image {
+        .gallery-item img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
         }
 
-        .gallery-image .img-placeholder {
-            height: 100%;
-            min-height: unset;
-            border-radius: 16px;
+        .gallery-item:hover img {
+            transform: scale(1.08);
         }
 
         .gallery-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(232, 114, 138, 0.9);
+            background: linear-gradient(135deg, rgba(232, 114, 138, 0.85), rgba(232, 135, 74, 0.85));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -714,9 +722,106 @@
 
         .gallery-text {
             color: white;
-            font-size: 1rem;
+            font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: 0.05em;
+        }
+
+        /* ─── LIGHTBOX / MODAL ─── */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(44, 24, 16, 0.92);
+            backdrop-filter: blur(20px);
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .lightbox-close svg {
+            fill: white;
+        }
+
+        .lightbox-img {
+            max-width: 90vw;
+            max-height: 85vh;
+            border-radius: 16px;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.5);
+            object-fit: contain;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .lightbox-nav:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .lightbox-nav svg {
+            fill: white;
+        }
+
+        .lightbox-prev {
+            left: 1.5rem;
+        }
+
+        .lightbox-next {
+            right: 1.5rem;
+        }
+
+        .lightbox-counter {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.7);
+            font-family: 'Jost', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
         }
 
         /* ─── SEÇÃO SOBRE ─── */
@@ -745,12 +850,6 @@
             border-radius: 24px;
             overflow: hidden;
             box-shadow: 0 20px 60px rgba(232, 114, 138, 0.25);
-        }
-
-        .about-image .img-placeholder {
-            height: 100%;
-            min-height: unset;
-            border-radius: 24px;
         }
 
         .about-text h2 {
@@ -983,6 +1082,18 @@
             to { transform: rotate(360deg); }
         }
 
+        /* Scroll reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* ─── RESPONSIVO ─── */
         @media (max-width: 1024px) {
             nav { display: none; }
@@ -1035,15 +1146,6 @@
             .gallery-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-
-            .gallery-item.large {
-                grid-column: span 1;
-                grid-row: span 1;
-            }
-
-            .gallery-item.medium {
-                grid-column: span 1;
-            }
         }
 
         @media (max-width: 768px) {
@@ -1093,11 +1195,24 @@
 
             .gallery-grid {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
+                gap: 0.75rem;
             }
 
             .about-highlights {
                 grid-template-columns: 1fr;
+            }
+
+            .lightbox-nav {
+                width: 40px;
+                height: 40px;
+            }
+
+            .lightbox-prev {
+                left: 0.5rem;
+            }
+
+            .lightbox-next {
+                right: 0.5rem;
             }
         }
 
@@ -1129,6 +1244,19 @@
                 bottom: 1.5rem;
                 right: 1.5rem;
             }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+
+            .gallery-item {
+                border-radius: 10px;
+            }
+
+            .gallery-overlay {
+                border-radius: 10px;
+            }
         }
 
         .text-gradient {
@@ -1136,6 +1264,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        /* Gallery load more button */
+        .gallery-load-more {
+            text-align: center;
+            margin-top: 2rem;
         }
     </style>
 </head>
@@ -1215,7 +1349,7 @@
 
             <div class="hero-image">
                 <div class="hero-image-frame">
-                    <img src="images/foto01.jpg" alt="Ateliê Resina Color Art" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;">
+                    <img src="fotos/foto 1 .jpeg" alt="Ateliê Resina Color Art" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;">
                 </div>
                 
                 <div class="float-card card1">
@@ -1252,9 +1386,9 @@
 
             <div class="products-grid">
                 <!-- Chaveiros -->
-                <div class="product-card">
+                <div class="product-card reveal">
                     <div class="product-image">
-                        <img src="images/foto02.jpg" alt="Chaveiros Personalizados" style="width: 100%; height: 220px; object-fit: cover;">
+                        <img src="fotos/foto 2 .jpeg" alt="Chaveiros Personalizados">
                         <span class="product-badge">Mais Pedido</span>
                     </div>
                     <div class="product-body">
@@ -1273,9 +1407,9 @@
                 </div>
 
                 <!-- Letras Decorativas -->
-                <div class="product-card">
+                <div class="product-card reveal">
                     <div class="product-image">
-                        <img src="images/foto03.jpg" alt="Letras Decorativas" style="width: 100%; height: 220px; object-fit: cover;">
+                        <img src="fotos/foto 3 .jpeg" alt="Letras Decorativas">
                     </div>
                     <div class="product-body">
                         <h3 class="product-name">Letras Decorativas</h3>
@@ -1293,9 +1427,9 @@
                 </div>
 
                 <!-- Porta-copos -->
-                <div class="product-card">
+                <div class="product-card reveal">
                     <div class="product-image">
-                        <img src="images/foto04.jpg" alt="Porta-copos em Resina" style="width: 100%; height: 220px; object-fit: cover;">
+                        <img src="fotos/foto 5 .jpeg" alt="Porta-copos em Resina">
                         <span class="product-badge">Novo</span>
                     </div>
                     <div class="product-body">
@@ -1314,9 +1448,9 @@
                 </div>
 
                 <!-- Lembranças Personalizadas -->
-                <div class="product-card">
+                <div class="product-card reveal">
                     <div class="product-image">
-                        <img src="images/foto05.jpg" alt="Lembranças Personalizadas" style="width: 100%; height: 220px; object-fit: cover;">
+                        <img src="fotos/foto 8 .jpeg" alt="Lembranças Personalizadas">
                     </div>
                     <div class="product-body">
                         <h3 class="product-name">Lembranças Personalizadas</h3>
@@ -1334,9 +1468,9 @@
                 </div>
 
                 <!-- Bandejas Artesanais -->
-                <div class="product-card">
+                <div class="product-card reveal">
                     <div class="product-image">
-                        <img src="images/foto06.jpg" alt="Bandejas Artesanais" style="width: 100%; height: 220px; object-fit: cover;">
+                        <img src="fotos/foto 9 .jpeg" alt="Bandejas Artesanais">
                     </div>
                     <div class="product-body">
                         <h3 class="product-name">Bandejas Artesanais</h3>
@@ -1354,9 +1488,9 @@
                 </div>
 
                 <!-- Kits Personalizados -->
-                <div class="product-card">
+                <div class="product-card reveal">
                     <div class="product-image">
-                        <img src="images/foto07.jpg" alt="Kits Personalizados" style="width: 100%; height: 220px; object-fit: cover;">
+                        <img src="fotos/foto 12.jpeg" alt="Kits Personalizados">
                         <span class="product-badge">Exclusivo</span>
                     </div>
                     <div class="product-body">
@@ -1384,69 +1518,283 @@
         </div>
     </section>
 
-    <!-- SEÇÃO GALERIA -->
+    <!-- SEÇÃO GALERIA - TODAS AS 66 FOTOS -->
     <section id="galeria" class="gallery-section">
         <div class="container">
             <div class="gallery-header">
                 <span class="hero-label">✦ Nosso Trabalho</span>
                 <h2 class="section-title">Galeria de <span class="text-gradient">Criações</span></h2>
                 <div class="deco-line"></div>
-                <p class="section-subtitle">Cada peça conta uma história. Conheça alguns dos nossos trabalhos e apaixone-se.</p>
+                <p class="section-subtitle">Cada peça conta uma história. Conheça alguns dos nossos trabalhos e apaixone-se. Clique em qualquer foto para ampliar.</p>
             </div>
 
-            <div class="gallery-grid">
-                <div class="gallery-item large">
-                    <div class="gallery-image">
-                        <img src="images/foto08.jpg" alt="Galeria" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-text">Ver mais ↗</span>
-                    </div>
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Fotos numeradas (foto 1 a foto 24) -->
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="fotos/foto 1 .jpeg" alt="Peça em Resina 1" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="fotos/foto 2 .jpeg" alt="Peça em Resina 2" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="fotos/foto 3 .jpeg" alt="Peça em Resina 3" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="fotos/foto 4 .jpeg" alt="Peça em Resina 4" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="fotos/foto 5 .jpeg" alt="Peça em Resina 5" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="fotos/foto 6 .jpeg" alt="Peça em Resina 6" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(6)">
+                    <img src="fotos/foto 7 .jpeg" alt="Peça em Resina 7" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(7)">
+                    <img src="fotos/foto 8 .jpeg" alt="Peça em Resina 8" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(8)">
+                    <img src="fotos/foto 9 .jpeg" alt="Peça em Resina 9" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(9)">
+                    <img src="fotos/foto 10.jpeg" alt="Peça em Resina 10" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(10)">
+                    <img src="fotos/foto 11.jpeg" alt="Peça em Resina 11" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(11)">
+                    <img src="fotos/foto 12.jpeg" alt="Peça em Resina 12" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(12)">
+                    <img src="fotos/foto 13.jpeg" alt="Peça em Resina 13" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(13)">
+                    <img src="fotos/foto 14.jpeg" alt="Peça em Resina 14" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(14)">
+                    <img src="fotos/foto 15.jpeg" alt="Peça em Resina 15" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(15)">
+                    <img src="fotos/foto 16.jpeg" alt="Peça em Resina 16" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(16)">
+                    <img src="fotos/foto 17.jpeg" alt="Peça em Resina 17" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(17)">
+                    <img src="fotos/foto 18.jpeg" alt="Peça em Resina 18" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(18)">
+                    <img src="fotos/foto 19.jpeg" alt="Peça em Resina 19" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(19)">
+                    <img src="fotos/foto 20.jpeg" alt="Peça em Resina 20" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(20)">
+                    <img src="fotos/foto 21.jpeg" alt="Peça em Resina 21" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(21)">
+                    <img src="fotos/foto 22.jpeg" alt="Peça em Resina 22" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(22)">
+                    <img src="fotos/foto 23.jpeg" alt="Peça em Resina 23" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(23)">
+                    <img src="fotos/foto 24.jpeg" alt="Peça em Resina 24" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
                 </div>
 
-                <div class="gallery-item small">
-                    <div class="gallery-image">
-                        <img src="images/foto09.jpg" alt="Galeria" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-text">Ver mais ↗</span>
-                    </div>
+                <!-- WhatsApp Photos -->
+                <div class="gallery-item" onclick="openLightbox(24)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.27.jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
                 </div>
-
-                <div class="gallery-item small">
-                    <div class="gallery-image">
-                        <img src="images/foto10.jpg" alt="Galeria" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-text">Ver mais ↗</span>
-                    </div>
+                <div class="gallery-item" onclick="openLightbox(25)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.28.jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
                 </div>
-
-                <div class="gallery-item medium">
-                    <div class="gallery-image">
-                        <img src="images/foto11.jpg" alt="Galeria" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-text">Ver mais ↗</span>
-                    </div>
+                <div class="gallery-item" onclick="openLightbox(26)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.28 (1).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
                 </div>
-
-                <div class="gallery-item medium">
-                    <div class="gallery-image">
-                        <img src="images/foto12.jpg" alt="Galeria" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-text">Ver mais ↗</span>
-                    </div>
+                <div class="gallery-item" onclick="openLightbox(27)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.28 (2).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
                 </div>
-
-                <div class="gallery-item small">
-                    <div class="gallery-image">
-                        <img src="images/foto13.jpg" alt="Galeria" style="width: 100%; height: 100%; object-fit: cover;">
-                    </div>
-                    <div class="gallery-overlay">
-                        <span class="gallery-text">Ver mais ↗</span>
-                    </div>
+                <div class="gallery-item" onclick="openLightbox(28)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.29.jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(29)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.29 (1).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(30)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.29 (2).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(31)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.29 (3).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(32)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.29 (4).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(33)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.30.jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(34)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.30 (1).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(35)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.30 (2).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(36)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.30 (3).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(37)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.30 (4).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(38)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.31.jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(39)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.31 (1).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(40)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.32.jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(41)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.32 (1).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(42)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.32 (2).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(43)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.33.jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(44)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.33 (1).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(45)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.33 (2).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(46)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.34.jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(47)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.34 (1).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(48)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.34 (2).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(49)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.34 (3).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(50)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.35.jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(51)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.35 (1).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(52)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.35 (2).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(53)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.36.jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(54)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.36 (1).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(55)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.36 (2).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(56)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.37.jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(57)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.37 (1).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(58)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.37 (2).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(59)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.38.jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(60)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.38 (1).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(61)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.39.jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(62)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.39 (1).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(63)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.39 (2).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(64)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.39 (3).jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
+                </div>
+                <div class="gallery-item" onclick="openLightbox(65)">
+                    <img src="fotos/WhatsApp Image 2026-05-19 at 20.34.40.jpeg" alt="Criação em Resina" loading="lazy">
+                    <div class="gallery-overlay"><span class="gallery-text">🔍</span></div>
                 </div>
             </div>
 
@@ -1461,17 +1809,38 @@
         </div>
     </section>
 
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M18 6L6 18M6 6l12 12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+        </button>
+        <button class="lightbox-nav lightbox-prev" onclick="prevImage()">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M15 18l-6-6 6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <img class="lightbox-img" id="lightboxImg" src="" alt="Foto ampliada">
+        <button class="lightbox-nav lightbox-next" onclick="nextImage()">
+            <svg width="24" height="24" viewBox="0 0 24 24">
+                <path d="M9 18l6-6-6-6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
     <!-- SEÇÃO SOBRE -->
     <section id="sobre" class="about-section">
         <div class="container">
             <div class="about-content">
-                <div class="about-image">
+                <div class="about-image reveal">
                     <div class="about-image-frame">
-                        <img src="images/foto14.jpg" alt="Ateliê Resina Color Art" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;">
+                        <img src="fotos/foto 15.jpeg" alt="Ateliê Resina Color Art" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px;">
                     </div>
                 </div>
 
-                <div class="about-text">
+                <div class="about-text reveal">
                     <span class="hero-label">✦ Nossa História</span>
                     <h2>Sobre o Ateliê Resina Color Art</h2>
                     <p>
@@ -1514,37 +1883,37 @@
             </div>
 
             <div class="testimonials-grid">
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="stars">★ ★ ★ ★ ★</div>
                     <p class="testimonial-text">"Produto perfeito e acabamento impecável! Superou minhas expectativas. Recomendo para todos!"</p>
                     <p class="testimonial-author">— Sarah Oliveira</p>
                 </div>
 
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="stars">★ ★ ★ ★ ★</div>
                     <p class="testimonial-text">"Presentes para o casamento dos meus sonhos. A menina é uma artista! Muito obrigada!"</p>
-                    <p class="testimonial-author">— Maria & João</p>
+                    <p class="testimonial-author">— Maria &amp; João</p>
                 </div>
 
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="stars">★ ★ ★ ★ ★</div>
                     <p class="testimonial-text">"Entrega rápida e qualidade excepcional. Já é minha segunda encomenda! Muito top!"</p>
                     <p class="testimonial-author">— Lucas Silva</p>
                 </div>
 
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="stars">★ ★ ★ ★ ★</div>
                     <p class="testimonial-text">"As letras decorativas ficaram lindíssimas no quarto. Muito delicado e elegante!"</p>
                     <p class="testimonial-author">— Carolina Lima</p>
                 </div>
 
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="stars">★ ★ ★ ★ ★</div>
                     <p class="testimonial-text">"Comprei como lembrança de formatura. Virou reliquia! Qualidade incomparável."</p>
                     <p class="testimonial-author">— Ana Beatriz</p>
                 </div>
 
-                <div class="testimonial-card">
+                <div class="testimonial-card reveal">
                     <div class="stars">★ ★ ★ ★ ★</div>
                     <p class="testimonial-text">"Personalizou exatamente do jeito que pedi. Atendimento impecável do início ao fim!"</p>
                     <p class="testimonial-author">— Pedro Costa</p>
@@ -1650,6 +2019,63 @@
                 nav.classList.remove('active');
             });
         });
+
+        // ─── LIGHTBOX ───
+        const galleryItems = document.querySelectorAll('.gallery-item img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxCounter = document.getElementById('lightboxCounter');
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
+            lightboxImg.src = galleryItems[index].src;
+            lightboxCounter.textContent = `${index + 1} / ${galleryItems.length}`;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % galleryItems.length;
+            lightboxImg.src = galleryItems[currentIndex].src;
+            lightboxCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+            lightboxImg.src = galleryItems[currentIndex].src;
+            lightboxCounter.textContent = `${currentIndex + 1} / ${galleryItems.length}`;
+        }
+
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowRight') nextImage();
+            if (e.key === 'ArrowLeft') prevImage();
+        });
+
+        // Close lightbox when clicking outside image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        // ─── SCROLL REVEAL ANIMATION ───
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        revealElements.forEach(el => revealObserver.observe(el));
     </script>
 </body>
 </html>
