@@ -1,0 +1,18 @@
+{
+  "rewrites": [
+    { "source": "/images/foto01.jpg", "destination": "/fotos/foto%201%20.jpeg" },
+    { "source": "/images/foto02.jpg", "destination": "/fotos/foto%202%20.jpeg" },
+    { "source": "/images/foto03.jpg", "destination": "/fotos/foto%203%20.jpeg" },
+    { "source": "/images/foto04.jpg", "destination": "/fotos/foto%204%20.jpeg" },
+    { "source": "/images/foto05.jpg", "destination": "/fotos/foto%205%20.jpeg" },
+    { "source": "/images/foto06.jpg", "destination": "/fotos/foto%206%20.jpeg" },
+    { "source": "/images/foto07.jpg", "destination": "/fotos/foto%207%20.jpeg" },
+    { "source": "/images/foto08.jpg", "destination": "/fotos/foto%208%20.jpeg" },
+    { "source": "/images/foto09.jpg", "destination": "/fotos/foto%209%20.jpeg" },
+    { "source": "/images/foto10.jpg", "destination": "/fotos/foto%2010.jpeg" },
+    { "source": "/images/foto11.jpg", "destination": "/fotos/foto%2011.jpeg" },
+    { "source": "/images/foto12.jpg", "destination": "/fotos/foto%2012.jpeg" },
+    { "source": "/images/foto13.jpg", "destination": "/fotos/foto%2013.jpeg" },
+    { "source": "/images/foto14.jpg", "destination": "/fotos/foto%2014.jpeg" }
+  ]
+}
